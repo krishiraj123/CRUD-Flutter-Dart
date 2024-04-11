@@ -18,7 +18,7 @@ class _DisplayAPIPageState extends State<DisplayAPIPage> {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => AddDetialAPIPage()))
               .then((value) {
-              setState(() {});
+            setState(() {});
           });
         },
         child: Icon(Icons.add),
@@ -60,7 +60,10 @@ class _DisplayAPIPageState extends State<DisplayAPIPage> {
                               onPressed: () {
                                 setState(() {
                                   MyApi()
-                                      .deleteData(snapshot.data![index]["id"]);
+                                      .deleteData(snapshot.data![index]["id"])
+                                      .then((value) {
+                                    setState(() {});
+                                  });
                                 });
                               },
                               icon: Icon(Icons.delete)),
@@ -73,8 +76,11 @@ class _DisplayAPIPageState extends State<DisplayAPIPage> {
                                     name: snapshot.data![index]["name"],
                                     image: snapshot.data![index]["image"],
                                   ),
-                                )).then((value) {
+                                ))
+                                    .then((value) {
+                                  if (value) {
                                     setState(() {});
+                                  }
                                 });
                               },
                               icon: Icon(Icons.edit)),
