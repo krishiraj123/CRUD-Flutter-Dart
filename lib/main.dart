@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       title: "CRUD DEMO",
       debugShowCheckedModeBanner: false,
-      home: EqualPartPage(),
+      home: DisplayPage(),
     );
   }
 }
