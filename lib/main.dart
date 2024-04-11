@@ -1,6 +1,5 @@
 import 'package:databaseapi/components/api_components/displayapi_screen.dart';
 import 'package:databaseapi/components/database_components/display_screen.dart';
-import 'package:databaseapi/sharedpref_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
